@@ -24,3 +24,144 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+
+
+/* Make sure these styles are added to your globals.css */
+
+/* Premium Modal Styles */
+
+/* Glowing border effect for the premium card */
+.premium-card-glow {
+  box-shadow: 0 0 15px 1px rgba(255, 255, 255, 0.1), 
+              0 0 30px 4px rgba(138, 75, 255, 0.1), 
+              0 0 50px 6px rgba(39, 78, 255, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.premium-card-glow:hover {
+  box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.15), 
+              0 0 40px 6px rgba(138, 75, 255, 0.15), 
+              0 0 60px 8px rgba(39, 78, 255, 0.1);
+}
+
+/* Inner border that glows on hover */
+.premium-card-inner-border {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.premium-card-glow:hover .premium-card-inner-border {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+              inset 0 0 10px rgba(138, 75, 255, 0.05);
+}
+
+/* Detail cards with hover effects */
+.premium-detail-card {
+  background: rgba(30, 30, 45, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+
+.premium-detail-card:hover {
+  background: rgba(40, 40, 60, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(138, 75, 255, 0.2);
+}
+
+/* Premium loading spinner */
+.premium-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: conic-gradient(transparent, rgba(138, 75, 255, 0.8));
+  -webkit-mask: radial-gradient(circle at center, transparent 55%, black 55%);
+  mask: radial-gradient(circle at center, transparent 55%, black 55%);
+  animation: rotate 1s infinite linear;
+}
+
+.premium-loading-spinner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: conic-gradient(transparent, rgba(39, 78, 255, 0.8));
+  -webkit-mask: radial-gradient(circle at center, transparent 67%, black 67%);
+  mask: radial-gradient(circle at center, transparent 67%, black 67%);
+  animation: rotate 1.5s infinite linear reverse;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar for the modal content */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(138, 75, 255, 0.3) rgba(30, 30, 45, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(30, 30, 45, 0.4);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(138, 75, 255, 0.3);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 75, 255, 0.5);
+}
+
+/* Add these to your globals.css file for the floating search bar */
+
+/* Smooth scroll for the page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation delays */
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* For the shadow effect on the floating search bar */
+.floating-search-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
