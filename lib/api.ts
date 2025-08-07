@@ -1,4 +1,4 @@
-import { OMDbSearchResponse, OMDbMovieDetails, SearchFilters } from '../types/omdb';
+import { OMDbSearchResponse, OMDbMovieDetails, SearchFilters,OMDbSearchResult } from '../types/omdb';
 
 const API_KEY = process.env.NEXT_PUBLIC_OMDB_API_KEY || '2354b253';
 const BASE_URL = 'https://www.omdbapi.com/'; // ❌ Removed hardcoded apikey here
@@ -90,7 +90,7 @@ export async function fetchMoviesByCategory(
   try {
     const result = await searchMovies({
       query,
-      type: type === 'all' ? 'all' : type,
+      type:  type,
       year,
       page: 1
     });
